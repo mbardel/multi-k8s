@@ -20,15 +20,15 @@ after_success:
   - docker push induktor/multi-server
   - docker push induktor/multi-worker
 
-  deploy:
-    provider: elasticbeanstalk
-    region: eu-central-1
-    app: multi-docker1
-    env: MultiDocker1-env
-    bucket_name: elasticbeanstalk-eu-central-1-732956331829
-    bucket_path: docker-multi
-    on:
-      branch: master
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key:
-      secure: $AWS_SECRET_KEY
+deploy:
+  provider: elasticbeanstalk
+  region: eu-central-1
+  app: multi-docker1
+  env: MultiDocker1-env
+  bucket_name: elasticbeanstalk-eu-central-1-732956331829
+  bucket_path: docker-multi
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: $AWS_SECRET_KEY
